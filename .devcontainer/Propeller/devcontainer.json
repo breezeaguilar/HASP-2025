@@ -1,0 +1,7 @@
+{
+    "name": "Propeller Container",
+    "dockerComposeFile": ["../../docker-compose.yml"],
+    "service": "propeller",
+    "shutdownAction": "none",
+    "workspaceFolder": "/workspace/propeller"
+}

@@ -1,0 +1,13 @@
+@startuml Search FSM
+init : initialize the program
+Hunt : Acquire tracking target (Sun)
+Hunt : Calculate target vectors
+Guide : Compensate for movement (update guidance vectors)
+Idle : safe components
+
+[*] --> init : enter program
+init --> Hunt : Begin hunting for sun
+Hunt --> Guide : Target Acquires / Start Guiding
+Guide --> Idle : Target Lost
+Idle --> Hunt : Idle Timeout / Start Hunting
+@enduml

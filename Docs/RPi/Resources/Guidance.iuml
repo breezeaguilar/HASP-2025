@@ -1,0 +1,25 @@
+@startuml SpectraSolisGuidance
+
+init : initialize instruments and instrument vecs
+
+Hunt : coarse steering, hunt for sun target
+Hunt : bring target into view of fine steering instrument
+
+Track : fine control tracking
+Track : calculate target vecs
+
+TargetLost : safe instruments, prepare to hunt
+
+[*] --> init : enter program
+
+init --> Hunt : enter guidance protocol
+
+Hunt --> Track : achieve tracking
+
+Track --> Track : update target vecs
+
+Track --> TargetLost : lose target
+
+TargetLost --> Hunt : reaquire Target
+
+@enduml

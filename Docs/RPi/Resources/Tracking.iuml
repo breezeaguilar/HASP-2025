@@ -1,0 +1,14 @@
+@startuml SpectraSolis Tracking
+
+Tracking : get target vectors from guide cam
+
+state ClosedLoopControl {
+    Predict : control calculations
+    System : observe system changes
+}
+
+[*] --> Tracking : enter fine tracking mode
+Tracking --> ClosedLoopControl : dispatch target vectors
+Predict --> System : move actuators  .
+System --> Predict : sensor measurement
+@enduml
