@@ -1,0 +1,16 @@
+version: '3'
+services:
+  rpi:
+    build: ./rpi
+    volumes:
+      - .:/workspace:cached
+    command: sleep infinity
+    links:
+      - propeller
+
+  propeller:
+    build: ./propeller 
+    command: sleep infinity
+    volumes:
+      - .:/workspace:cached
+    # ...
