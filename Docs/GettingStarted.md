@@ -67,7 +67,7 @@ Username:~/development$
 From here, we will clone our development folder. Copy the following command into a text editor:
 
 ```Shell
-git clone -o replace/with/your/HASP-2025/fork.git .
+git clone replace/with/your/HASP-2025/fork.git .
 ```
 
 Navigate to your personal fork of the HASP-2025 repository, and click on the drop down menu labled "Code". This will bring up a small window with an https link which looks something like: 
