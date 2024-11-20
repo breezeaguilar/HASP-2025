@@ -122,3 +122,7 @@ search for and select the command "Dev Containers: Reopen in Container"
 Select the platform you wish to develop in, either rpi, propeller, or frontend
 
 Wait for the container to spin up, and then you're ready to start working!
+
+## Next steps
+
+Check out [Developing](Developing.md) to see a quick run down on how to use your new development environment!

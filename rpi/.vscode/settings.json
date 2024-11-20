@@ -1,0 +1,16 @@
+{
+    "cmake.sourceDirectory": "/workspace/rpi/HASP_25_RPI/lib",
+    "python.testing.unittestEnabled": false,
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./HASP_25_RPI/test",
+        "-p",
+        "*test*.py"
+    ],
+    "python.testing.pytestEnabled": true,
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    
+}
