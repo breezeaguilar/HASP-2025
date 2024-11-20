@@ -1,3 +1,4 @@
 GPIOSimulator
 opencv-python
 numpy
+pyserial
