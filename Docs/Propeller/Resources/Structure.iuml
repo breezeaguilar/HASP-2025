@@ -1,0 +1,41 @@
+@startuml SpectraSolis Flight Controller
+
+SpectraSolisSC: Main Science and Communication systems
+
+SpectraSolisFC: flight controller system for SpectraSolis instrument
+
+Guidance: systems for guiding scope
+
+Science: systems for collecting data
+
+Data: Save snapshot of guidance systems for later analysis/reconstruction
+
+GPS: recieve gps coords from HASP systems
+
+SunTrack: calculate expected position of sun given curr coords
+
+FineSteeringCam: calculate suns actual position given tracking image
+
+InertialSystem: calculate scope's actual position given accelerometer data
+
+ServoControl: closed loop servo control
+
+SpectraSolisSC --> SpectraSolisFC
+
+SpectraSolisFC --> Guidance
+SpectraSolisFC -r> Science
+
+Science --d> Data
+
+Guidance -r> GPS
+Guidance --> SunTrack
+Guidance --> FineSteeringCam
+
+GPS --> InertialSystem
+
+InertialSystem --> ServoControl
+
+SunTrack --> ServoControl
+
+FineSteeringCam --> ServoControl
+@enduml

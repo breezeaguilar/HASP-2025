@@ -1,0 +1,44 @@
+@startuml CommunicationsModule
+
+class SP_Comms
+SP_Comms : +run() //run threads
+SP_Comms : +register_command_callback() //register callback function
+SP_Comms : input() //uplink thread
+SP_Comms : output() //downlink thread
+
+
+class SP_PacketManager
+SP_PacketManager : PacketStrategies{}
+SP_PacketManager : SP_Packet_Util
+SP_PacketManager : +packetize() //packetize data
+SP_PacketManager : +depacketize() //read packet data
+SP_PacketManager : +register_packet() //register packet strategy
+
+class SP_Packet_Util
+SP_Packet_Util : +get_packetID()
+SP_Packet_Util : +get_time()
+SP_Packet_Util : +get_checksum()
+SP_Packet_Util : +get_minimal_header()
+SP_Packet_Util : +get_header()
+SP_Packet_Util : +get_packet()
+SP_Packet_Util : +read_header()
+SP_Packet_Util : +verify_header()
+
+abstract class SP_Packet_strat
+SP_Packet_strat : +packetize()
+SP_Packet_strat : +depacketize()
+
+class SP_Packet
+SP_Packet : +packetize()
+SP_Packet : +depacketize()
+
+
+SP_Comms *-- SP_PacketManager
+
+SP_PacketManager *-- SP_Packet_Util
+SP_PacketManager o-- SP_Packet_strat
+
+SP_Packet_strat <|-- SP_Packet
+
+SP_Packet ..> SP_Packet_Util
+@enduml

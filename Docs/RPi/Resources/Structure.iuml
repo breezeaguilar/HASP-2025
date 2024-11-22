@@ -1,0 +1,25 @@
+@startuml SpectraSolis Science Computer
+
+SpectraSolisSC: collect data from instrument for later analysis
+SpectraSolisSC: handle communications systems
+
+Science: gather data from instruments, save onboard
+
+Communications: transmit data to ground, monitor for commands
+
+Camera: control cameras, do some image processing
+
+Uplink: Command uplink
+
+Downlink: transmit some science data to ground
+
+SpectraSolisSC --> Science
+
+Science --> Camera
+
+SpectraSolisSC -->Communications
+
+Communications --> Uplink
+Communications --> Downlink
+
+@enduml
