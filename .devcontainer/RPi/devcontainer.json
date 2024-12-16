@@ -5,6 +5,8 @@
     "shutdownAction": "none",
     "workspaceFolder": "/workspace/rpi",
 
+    "remoteUser": "root",
+
     "postCreateCommand": "pip3 install --user -r requirements.txt",
     
     "customizations": {
@@ -23,7 +25,8 @@
                 "ms-python.debugpy",
                 "ms-vscode.cpptools-extension-pack",
                 "ms-vscode.cpptools-themes",
-                "ms-toolsai.jupyter-keymap"
+                "ms-toolsai.jupyter-keymap",
+                "benjamin-simmonds.pythoncpp-debug"
             ]
         }
     }

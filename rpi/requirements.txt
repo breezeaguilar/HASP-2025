@@ -1,3 +1,6 @@
 GPIOSimulator
 numpy
 pytest
+pyserial
+pybind11[global]
+scikit_build_core
