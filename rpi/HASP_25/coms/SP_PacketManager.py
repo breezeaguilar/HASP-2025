@@ -1,5 +1,5 @@
 import time
-import struct
+from HASP_25.coms.CRC import CRC
 
 # holds different packet encodings, and handles generating and reading packets
 class SP_PacketManager:
@@ -58,9 +58,15 @@ class SP_Packet_Util :
 
     SP_IDENTIFIER = b'SP' # "SP" as raw ascii bytes
 
-    Checksum_key = b'\x00\x00'
+    Checksum_key = b'\x10\x21'
+
+    Checksum = None
 
     PacketId = 0 #consider this to be uint functionally 
+
+    def __init__(self) :
+        self.Checksum = CRC()
+        pass
 
     # generates and returns an unused packet id
     def get_packetID(self) -> bytearray :
@@ -93,9 +99,7 @@ class SP_Packet_Util :
 
     # get the configured checksum of the data bytearray
     def get_checksum(self, data: bytearray) -> int :
-        if(True):
-            print("ERROR: SP_PacketManager.SP_Packet_Util.get_checksum not implemented!")
-        pass
+        return self.Checksum.compute_CRC16(data)
 
     # get the full packet in the form of a bytearray
     def get_packet_bytearray(self, packetType: int, data: bytearray) -> bytearray:

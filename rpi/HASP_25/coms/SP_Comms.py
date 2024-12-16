@@ -22,7 +22,7 @@ class SP_Comms :
             return
         #open serial comms
         #open + initialize serial confidence recorder ( file )
-        self.packetManager = SP_PacketManager()
+        #self.packetManager = SP_PacketManager()
         
     
     # run required processes
