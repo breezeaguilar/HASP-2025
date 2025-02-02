@@ -17,7 +17,7 @@ find_package(pybind11 CONFIG REQUIRED)
 
 ## find files to compile into pybind11 shared library 
 file(GLOB_RECURSE HASP-2025-Private-Source "${CMAKE_CURRENT_LIST_DIR}/HASP_25_CPP/src/*.cpp")
-file(GLOB_RECURSE HASP-2025-Bindings "${CMAKE_CURRENT_LIST_DIR}/HASP_25_CPP/bindings/*.cpp")
+file(GLOB_RECURSE HASP-2025-Bindings "${CMAKE_CURRENT_LIST_DIR}/pyBind11_Bindings/*.cpp")
 file(GLOB_RECURSE HASP-2025-Public-Headers "${CMAKE_CURRENT_LIST_DIR}/HASP_25_CPP/include/*.h")
 
 ## set include directory for C++

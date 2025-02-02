@@ -7,7 +7,7 @@ import numpy as np
 from HASP_25.coms.SP_PacketManager import SP_PacketManager as PM
 from HASP_25.coms.SP_PacketManager import SP_Packet_Util as PU
 from HASP_25.coms.CRC import CRC
-#from HASP_25.coms.bind_test import square
+from HASP_25.coms.bind_test import square
 
 
 
@@ -38,8 +38,8 @@ class SP_PacketManagerTest(unittest.TestCase):
         #print(sum)
         self.assertEqual(sum, 4979) # 4979 == 0x1373, the answer to crc16([0x0x,0x02])
 
-    #def test_binding(self) :
-    #    self.assertEqual(square(2),11)
+    def test_binding(self) :
+        self.assertEqual(square(2),4)
 
 
 if __name__ == "__main__" :

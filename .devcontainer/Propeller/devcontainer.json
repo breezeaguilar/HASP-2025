@@ -3,5 +3,25 @@
     "dockerComposeFile": ["../../docker-compose.yml"],
     "service": "propeller",
     "shutdownAction": "none",
-    "workspaceFolder": "/workspace/propeller"
+    "workspaceFolder": "/workspace/propeller",
+    
+    "mounts": [
+        {
+            "source": "${localWorkspaceFolder}/rpi/HASP_25_CPP",
+            "target": "/workspace/propeller/HASP_25_CPP",
+            "type": "bind"
+        }
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "wayou.vscode-todo-highlight",
+                "twxs.cmake",
+                "ms-vscode.cmake-tools",
+                "ms-vscode.cpptools-extension-pack",
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-themes"
+            ]
+        }
+    }
 }
