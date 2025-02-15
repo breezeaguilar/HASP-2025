@@ -15,6 +15,10 @@ class SP_PacketManager:
 
     def packetize(data:object) -> bytearray:
         
+        packtData = gps_packet.encode(Data)
+
+        sp_packet_data = SP_Packet_Util.get_packet_bytearray(packtData)
+
         # insert necessary data
         # preprocess data
         # generate header

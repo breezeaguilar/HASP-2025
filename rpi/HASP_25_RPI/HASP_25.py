@@ -1,39 +1,35 @@
 from threading import Thread
 
-from coms.SP_Comms import SP_Comms
-
 #Control Modules
 CommsModule = None
 
 # Control Threads
 
-
 def init() :
-    # declare class fields being used
+    data = "$GPGGA,202212.00,3024.7205,N,09110.7264,W,1,06,1.69,00061,M,-025,M,,*51" # test packet
+    # is NMEA identifier independent of packet verify ?
+    if verifyPacket(data):  # checksum always isnt done
+
+        pass
+
+def verifyPacket(data) -> bool:    # packet received, perform checksum
+    # TODO: perform bitwise XOR on characters between "$" and "*" of message
+    # check calculated hex result against original message checksum
+
+
+
+    # decode message after integrity check
+
+
+    gpsdecode(data)
+    pass
+
+def gpsdecode(data) :
+    # TODO: split strings using comma delimiters in message
+    # get fields in between commas
+    # calculate fields
+
+
+    data[1] == 0
     
-    # Control Modules
-    global CommsModule # Comms control module
-
-    # Instruments
-
-
-    
-    # Initialize Control Modules
-    CommsModule = SP_Comms
-
-    # Configure Control Modules
-    CommsModule#configure non-standard control variables (encoding, loop time, etc) 
-    CommsModule.add_input_callback(commandKey= "Shutter Enable",_EventCallback= callbackFunc) # Add input callback functions
-    CommsModule.add_packet(packetID= "PacketID", packet= dataPacket)
-    
-
-    # Run Control Modules
-    CommsModule.run()
-
-    if(True) :
-        print("HASP_25.py stub. please implement script")
-
-
-
-
 if(__name__ == "__main__") : init()
